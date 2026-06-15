@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: ai-document-qa-frontend
+    runtime: node
+    buildCommand: npm install && npm run build
+    startCommand: npm install -g serve && serve -s dist -l 5000
+    envVars:
+      - key: NODE_ENV
+        value: production
