@@ -14,15 +14,25 @@ function QuestionInput({ onSubmit, loading, disabled }) {
 
   return (
     <form className="question-form" onSubmit={handleSubmit}>
-      <textarea
-        value={question}
-        onChange={(e) => setQuestion(e.target.value)}
-        placeholder={disabled ? "Upload a PDF first" : "Ask a question..."}
-        rows="3"
-        disabled={disabled || loading}
-      />
-      <button type="submit" disabled={!question.trim() || loading || disabled}>
-        {loading ? "Searching..." : "Send"}
+      <div className="input-wrapper">
+        <textarea
+          value={question}
+          onChange={(e) => setQuestion(e.target.value)}
+          placeholder={
+            disabled
+              ? "📤 Upload a PDF first to ask questions"
+              : "💭 Ask something about your document..."
+          }
+          rows="4"
+          disabled={disabled || loading}
+        />
+      </div>
+      <button
+        type="submit"
+        disabled={!question.trim() || loading || disabled}
+        className="submit-btn"
+      >
+        {loading ? "🔍 Searching..." : "Send 🚀"}
       </button>
     </form>
   );

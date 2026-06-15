@@ -7,53 +7,101 @@ input[type="file"] {
 }
 
 .upload-area {
-  border: 2px dashed #999;
-  padding: 2rem;
+  border: 2px dashed #667eea;
+  padding: 2.5rem;
   text-align: center;
   cursor: pointer;
-  border-radius: 6px;
-  background: #fafafa;
-  transition: border-color 0.2s;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+  transition: all 0.3s ease;
 }
 
 .upload-area:hover {
-  border-color: #333;
-  background: #f0f0f0;
+  border-color: #764ba2;
+  background: linear-gradient(135deg, #f0f2ff 0%, #e8e5ff 100%);
+  transform: translateY(-2px);
 }
 
 .upload-area.active {
-  border-color: #333;
-  background: #e8e8e8;
+  border-color: #764ba2;
+  background: linear-gradient(135deg, #e8e5ff 0%, #e0d8ff 100%);
+  transform: scale(1.02);
 }
 
-.upload-area p {
+.upload-area.loading {
+  cursor: not-allowed;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.upload-icon {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.upload-title {
+  margin: 0.5rem 0 0.3rem 0;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.upload-subtitle {
   margin: 0;
   color: #666;
+  font-size: 0.95rem;
 }
 
 .file-info {
-  background: #e8f5e9;
-  padding: 1rem;
-  border-radius: 6px;
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  padding: 1.2rem;
+  border-radius: 10px;
   border: 1px solid #a5d6a7;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
 
-.file-info p {
+.file-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.file-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.file-name {
   margin: 0;
-  color: #2e7d32;
+  color: #155724;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.file-info button {
-  padding: 0.5rem 1rem;
-  background: #fff;
-  border: 1px solid #999;
+.file-status {
+  margin: 0.2rem 0 0 0;
+  color: #1e7e34;
+  font-size: 0.9rem;
+}
+
+.clear-btn {
+  padding: 0.5rem 0.8rem;
+  background: white;
+  border: 1px solid #95c88a;
+  color: #155724;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
-.file-info button:hover {
-  background: #f0f0f0;
+.clear-btn:hover {
+  background: #f8f9fa;
+  border-color: #155724;
+  color: #155724;
 }
